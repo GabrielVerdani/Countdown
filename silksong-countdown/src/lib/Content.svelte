@@ -28,7 +28,7 @@
 
 <div class="content">
   <div>
-    <h2>Hollow Knight: Silksong will out in at least</h2>
+    <h2>Hollow Knight: Silksong will be out in at least</h2>
     <h1>{timeLeftString}</h1>
   </div>
 </div>
