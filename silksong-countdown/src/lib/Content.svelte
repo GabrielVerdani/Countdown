@@ -22,13 +22,13 @@
     let minutes = Math.floor(hoursms / (60*1000));
     let minutesms = time % (60*1000);
     let seconds = Math.floor(minutesms / 1000);
-    return `${days} days ${hours}h ${minutes}m ${seconds}s`
+    return `${days} days ${hours}h\xa0${minutes}m\xa0${seconds}s`
   }
 </script>
 
 <div class="content">
   <div>
-    <h2>Hollow Knight: Silksong will be out in at least</h2>
+    <h2>Hollow Knight: Silksong will&nbsp;be&nbsp;out&nbsp;in&nbsp;at&nbsp;least</h2>
     <h1>{timeLeftString}</h1>
   </div>
 </div>
@@ -49,4 +49,15 @@
   h1 {
     font-size: 4rem;
   }
+
+  @media(max-width: 650px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
 </style>
