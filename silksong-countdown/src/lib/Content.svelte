@@ -22,13 +22,15 @@
     let minutes = Math.floor(hoursms / (60*1000));
     let minutesms = time % (60*1000);
     let seconds = Math.floor(minutesms / 1000);
+    
     return `${days} days ${hours}h\xa0${minutes}m\xa0${seconds}s`
   }
 </script>
 
 <div class="content">
   <div>
-    <h2>Hollow Knight: Silksong will&nbsp;be&nbsp;out&nbsp;in&nbsp;at&nbsp;least</h2>
+    <h2>Hollow Knight: Silksong <span style="white-space: nowrap;">will be out in at least</span></h2>
+    <div class="divisor"></div>
     <h1>{timeLeftString}</h1>
   </div>
 </div>
@@ -46,17 +48,23 @@
     text-align: center;
   }
 
+  .divisor {
+    height: 1px;
+    background-color: white;
+    opacity: 0.1;
+    margin: 10px 0;
+  }
+
   h1 {
     font-size: 4rem;
   }
 
-  @media(max-width: 650px) {
+  @media(max-width: 700px) {
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
-
     h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 
