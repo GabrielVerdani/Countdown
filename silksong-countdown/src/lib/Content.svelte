@@ -3,10 +3,16 @@
   let timeLeft = maxDate.getTime() - Date.now() 
   let timeLeftString = parseMs(timeLeft);
 
-  setInterval(() => {
+  let updateTimeInterval = setInterval(updateTimer);
+
+  if(timeLeft <= 0) {
+    clearInterval(updateTimeInterval);
+  }
+
+  function updateTimer() {
     timeLeft = maxDate.getTime() - Date.now() 
     timeLeftString = parseMs(timeLeft);
-  })
+  }
 
   function parseMs(time) {
     let days = Math.floor(time / (24*60*60*1000));
