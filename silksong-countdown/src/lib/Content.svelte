@@ -29,9 +29,9 @@
 
 <div class="content">
   <div>
-    <h2>Hollow Knight: Silksong <span style="white-space: nowrap;">will be out in at least</span></h2>
-    <div class="divisor"></div>
-    <h1>{timeLeftString}</h1>
+    <h2>Hollow Knight: Silksong <span style="white-space: nowrap;">will be out soon</span></h2>
+    <!--<div class="divisor"></div>-->
+    <!--<h1>{timeLeftString}</h1>-->
   </div>
 </div>
 
