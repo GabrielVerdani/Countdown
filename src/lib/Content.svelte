@@ -1,37 +1,39 @@
-<script>
-  let maxDate = new Date(2023, 5, 12);
-  let timeLeft = maxDate.getTime() - Date.now() 
+<script lang="ts">
+  let maxDate = new Date(2025, 11, 31);
+  let timeLeft = maxDate.getTime() - Date.now() ;
   let timeLeftString = parseMs(timeLeft);
 
   let updateTimeInterval = setInterval(updateTimer);
 
   if(timeLeft <= 0) {
+    timeLeftString = parseMs(0);
     clearInterval(updateTimeInterval);
   }
 
   function updateTimer() {
-    timeLeft = maxDate.getTime() - Date.now() 
+    timeLeft = maxDate.getTime() - Date.now();
     timeLeftString = parseMs(timeLeft);
   }
 
-  function parseMs(time) {
+  function addZero(number: number) {
+    return number < 10 ? `0${number}` : number;
+  }
+
+  function parseMs(time: number) {
     let days = Math.floor(time / (24*60*60*1000));
-    let daysms = time % (24*60*60*1000);
-    let hours = Math.floor(daysms / (60*60*1000));
-    let hoursms = time % (60*60*1000);
-    let minutes = Math.floor(hoursms / (60*1000));
-    let minutesms = time % (60*1000);
-    let seconds = Math.floor(minutesms / 1000);
+    let hours = Math.floor((time % (24*60*60*1000)) / (60*60*1000));
+    let minutes = Math.floor((time % (60*60*1000)) / (60*1000));
+    let seconds = Math.floor((time % (60*1000)) / 1000);
     
-    return `${days} days ${hours}h\xa0${minutes}m\xa0${seconds}s`
+    return `${days} days ${addZero(hours)}h ${addZero(minutes)}m ${addZero(seconds)}s`
   }
 </script>
 
 <div class="content">
   <div>
-    <h2>Hollow Knight: Silksong <span style="white-space: nowrap;">will be out soon</span></h2>
-    <!--<div class="divisor"></div>-->
-    <!--<h1>{timeLeftString}</h1>-->
+    <h2>Hollow Knight: Silksong <span style="white-space: nowrap;">will be out in at least</span></h2>
+    <div class="divisor"></div>
+    <h1>{timeLeftString}</h1>
   </div>
 </div>
 

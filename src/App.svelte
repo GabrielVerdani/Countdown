@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Content from "./lib/Content.svelte";
 </script>
 
